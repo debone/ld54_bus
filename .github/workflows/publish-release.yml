@@ -14,8 +14,10 @@ on:
 
 jobs:
   export:
+    strategy:
+      fail-fast: false
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 25
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
