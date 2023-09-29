@@ -1,0 +1,16 @@
+{
+  "name": "ld54_bus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pre-release": "bump prerelease --commit \"prerelease v\" --tag \"v\" --push",
+    "release": "bump patch --commit \"release v\" --tag \"v\" --push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "version-bump-prompt": "^6.1.0"
+  }
+}
