@@ -31,6 +31,11 @@ jobs:
       - uses: jetli/wasm-bindgen-action@v0.1.0
 
       - run: trunk build --release
+
+      - name: Fix the damn path
+        run: |
+          cp ./dist/index.html ./dist/index-2.html
+          cat ./dist/index-2.html | sed "s@'/@'./@g" | sed 's@"/@"./@g' > ./dist/index.html
       - name: Set Version
         run: |
           echo "version=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
